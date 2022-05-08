@@ -6,7 +6,8 @@ import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 
 import { JwtGuard } from './guards/jwt.guard';
-import { JwtStrategy } from './guards/jwt.strategy';
+import { AtStrategy } from './strategies/at.strategy';
+import { RtStrategy } from './strategies/rt.strategy';
 
 //Import userModule into authModule because we need user service
 @Module({
@@ -20,7 +21,7 @@ import { JwtStrategy } from './guards/jwt.strategy';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, JwtGuard, JwtStrategy],
+  providers: [AuthService, JwtGuard, AtStrategy, RtStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}

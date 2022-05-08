@@ -71,4 +71,13 @@ export class AuthService {
     const jwt = await this.jwtService.signAsync({ user });
     return { token: jwt };
   }
+
+  // async getTokens(userId: string, email: string) {
+  //   const [at, rt] = await Promise.all([
+  //     this.jwtService.signAsync({
+  //       userId: userId,
+  //       email,
+  //     }),
+  //   ]);
+  // }
 }
